@@ -48,9 +48,9 @@ const StockDisplay = (props) => {
              <p>Close date: {stockData[0].name}</p>
              <p>High: {parseFloat(stockData[0]["2. high"])}</p>
              <p>Low: {parseFloat(stockData[0]["3. low"])}</p>
-             <p>Volume: {stockData[0]["5. volume"]}</p>
+             <p>Volume: {(stockData[0]["5. volume"]).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}</p>
          </div>
-         <div style={{marginTop: 100}}>
+         <div style={{marginTop: 50, maxWidth: 1000}}>
             <StockChart data={stockData}/>
          </div>
         

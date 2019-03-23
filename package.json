@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel index.html",
+    "prebuild": "shx rm -rf docs/*",
     "build": "parcel build index.html --out-dir ./docs --public-url /stockprice "
   },
   "author": "",
@@ -20,6 +21,7 @@
   "devDependencies": {
     "@babel/core": "^7.4.0",
     "@babel/plugin-proposal-class-properties": "^7.4.0",
-    "parcel-bundler": "^1.12.3"
+    "parcel-bundler": "^1.12.3",
+    "shx": "^0.3.2"
   }
 }

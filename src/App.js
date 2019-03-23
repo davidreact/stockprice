@@ -26,20 +26,14 @@ getDaily = () => {
       // console.log('response',response); 
       return (response.data)})
     .then(responsedata => {
-      // console.log('json',responsedata); 
-      //   const info = {
-      //   'metaData': responsedata['Meta Data'], 
-      //   'timeSeriesDaily': responsedata['Time Series (Daily)']
-      // }
-      
-      this.setState({stockData: responsedata})
-
-      
-      // console.log('info', info)
-  
+      // console.log('j
+      if ("Error Message" in responsedata){
+          this.setState({error: "Ouch! That didn't Work, try to type a valid stock code again for example MSFT"})
+        } else {
+         this.setState({stockData: responsedata, error: null})
+        }
       })
-    .catch(error => {console.log('error', error)
-    
+    .catch(error => {console.log('error', error)   
       this.setState({error: "Oops something went wrong"})});
 }
 
